@@ -1,0 +1,19 @@
+{
+    "name": "website-graffiti-bookmarklet",
+    "version": "1.0.0",
+    "description": "A bookmarklet that applies graffiti-style CSS effects to websites",
+    "main": "dist/bookmarklet.js",
+    "scripts": {
+        "setup": "npm install",
+        "build": "npx tsc && npm run minify",
+        "minify": "npx terser dist/bookmarklet.js -o dist/bookmarklet.min.js",
+        "dev": "npx tsc --watch",
+        "create-bookmarklet": "node create-bookmarklet.js",
+        "all": "npm run setup && npm run build && npm run create-bookmarklet"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0",
+        "terser": "^5.0.0",
+        "@types/node": "^20.0.0"
+    }
+}
